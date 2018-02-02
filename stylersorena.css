@@ -1,0 +1,28 @@
+#obrazek{
+    background-image: url(sorena.jpg);
+    width: 1350px;  
+    height: 120px;
+    margin-bottom: 10px;
+
+
+}
+.panel {
+  border: 3px solid black;
+  margin-top: 1px;
+  margin-bottom: 1px; 
+  margin-right: 1px;
+  margin-left: 1px;
+  width:85px;
+  float: left;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: -3px 5px;
+  text-decoration-color: black;
+  
+}
+
+.panel:hover{
+    color: lightblue;
+    background-color: #000000;
+    text-decoration-color: red;
+}
