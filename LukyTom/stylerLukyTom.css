@@ -49,5 +49,9 @@ a {
     text-decoration: none;
 }
 pre{
-    color: rgb(185, 185, 185)
+    color: rgb(185, 185, 185);
+}
+h2 {
+    color: rgb(185, 185, 185);
+text-align: left;
 }
