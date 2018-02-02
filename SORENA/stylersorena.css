@@ -15,18 +15,23 @@
   width:85px;
   float: left;
   text-align: center;
-  background-color: lightblue;
+  background-color: rgb(78, 1, 68);
   box-shadow: -3px 5px;
   text-decoration-color: black;
   
 }
 
 .panel:hover{
-    color: lightblue;
+    color: rgb(78, 1, 68);
     background-color: #000000;
     text-decoration-color: red;
 }
 a {
     color: red;
     text-decoration: none;
+}
+
+body{
+    background-image: url(pozadi.jpg);
+    
 }
