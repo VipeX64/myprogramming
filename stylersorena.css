@@ -26,4 +26,7 @@
     background-color: #000000;
     text-decoration-color: red;
 }
-h2
+a {
+    color: red;
+    text-decoration: none;
+}
