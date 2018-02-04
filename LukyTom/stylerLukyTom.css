@@ -94,3 +94,52 @@ th{
     text-align: center;
     color: white;
     background-color: black;
+} 
+.kontakttd3 {
+    border: 2px solid rgb(255, 255, 255);
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    color: black;
+    background-color: white;
+} 
+
+#textmenu{
+    margin-left: 40%;
+    color: white;
+
+}
+
+#textonas{
+    color: white;
+    font-size: xx-large;
+}
+.tymtd1{
+    border: 2px solid white;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+.tymtd2{
+    border: 2px solid white;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    color: black;
+    background-color: white;
+
+}
+.tymtr{
+    border: 1px solid rgb(255, 255, 255);
+    width: 1000px;
+    height: 50px;
+}
+/* Pokus o animaci */
+#obrazkymenu{
+    margin-left: 28%;
+    margin-top: 3%;
+}
+
+  
