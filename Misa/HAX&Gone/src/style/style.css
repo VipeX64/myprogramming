@@ -1,0 +1,7 @@
+#desktop {
+    background-image: url(../img/raw.png);
+    width: 100%;
+    height: -webkit-fill-available;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
