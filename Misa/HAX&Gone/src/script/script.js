@@ -31,6 +31,7 @@ $(document).keyup(function (e) {
             connectFunc(arrayInputu[1]);
         }
         $("#TerminalOutput").val(celkovyTerminalu);
+        $("#TerminalInput").val("");
     }
 });
 
