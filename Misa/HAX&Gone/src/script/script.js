@@ -1,13 +1,10 @@
-let desktop = document.getElementById("desktop");
-function openFullScreen() {
-    if (desktop.requestFullscreen) {
-        desktop.requestFullscreen();
-    } else if (desktop.mozRequestFullScreen) { /* Firefox */
-        desktop.mozRequestFullScreen();
-    } else if (desktop.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        desktop.webkitRequestFullscreen();
-    } else if (desktop.msRequestFullscreen) { /* IE/Edge */
-        desktop.msRequestFullscreen();
+
+$(document).keyup(function(e){
+    if(e.which==122){
+        e.preventDefault();//kill anything that browser may have assigned to it by default
+        //do what ever you wish here :) 
+        $("#desktop").css("height","100%");
+        $("#desktop").css("height","-webkit-fill-available");
+        return false;
     }
-}
-openFullScreen();
+ });
