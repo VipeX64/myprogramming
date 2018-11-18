@@ -1,4 +1,6 @@
 
+vstupTerminalu = "";
+
 let focus = false;
     $("input").focus(function () {
         focus = true;
@@ -16,7 +18,11 @@ $(document).keyup(function (e) {
         return false;
     }
     if (e.which == 13 && focus) {
-        alert("works");
+        vstupTerminalu += ">";
+        vstupTerminalu += $("#TerminalInput").val();
+        vstupTerminalu += "\n";
+        $("#TerminalOutput").val(vstupTerminalu);
+        alert(vstupTerminalu);
     }
 });
 
