@@ -2,4 +2,64 @@ body{
     width: 100vw;
     height: 100vh;
     border: 1px solid red;
+    overflow: hidden;
+    user-select: none;
+}
+#burzaIntro{
+    background: rgba(23, 56, 84, 0.9);
+    font-size: 70px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5vh;
+    font-family: comfortaa;
+    width: 950px;
+    border-radius: 100px 100px 20px 20px;
+    box-shadow: 0px 1px 60px #41adce;
+    animation: shake 10s infinite;
+}
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    66%{
+        transform: rotate(720deg);
+    }
+    100%{
+        transform: rotate(-720deg);
+    }
+}
+#start{
+    float: right;
+    margin-top: 50vh;
+    margin-right: 5vw;
+    background: rgba(23, 56, 84, 0.85);
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+#start:hover{
+    background: rgba(118, 128, 136, 0.85);
+    color: rgb(24, 21, 21)
+}
+#titleScreen{
+    background-image: url(pics/startup.jpg);
+    width: 100vw;
+    height: 110vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+}
+#instructions{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 50px;
+    color: #dcdcdc;
+    width: 100vw;
+    height: 100vh;
 }
