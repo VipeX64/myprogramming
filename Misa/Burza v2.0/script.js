@@ -25,7 +25,7 @@ $("#PyroxInCur").text(PyroxCur);
 let SportAm = $("#SportAmount").text();
 let SportVal = $("#SportValue").text();
 SportVal = SportVal.slice(0, -1);
-let SportCur = parseInt(SportxAm,10) * SportVal;
+let SportCur = parseInt(SportAm,10) * SportVal;
 SportCur += "$";
 $("#SportInCur").text(SportCur);
 
