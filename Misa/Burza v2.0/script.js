@@ -1,3 +1,6 @@
+let money = $("#cash").text();
+let moneyStocks = "";
+
 let PyroxAm = $("#PyroxAmount").text();
 let PyroxVal = $("#PyroxValue").text();
 PyroxVal = PyroxVal.slice(0, -1);
@@ -32,3 +35,6 @@ OilVal = OilVal.slice(0, -1);
 let OilCur = parseInt(OilAm,10) * OilVal;
 OilCur += "$";
 $("#OilInCur").text(OilCur);
+
+moneyStocks = (parseInt(PyroxCur.slice(0, -1),10) + parseInt(SportCur.slice(0, -1),10) + parseInt(WOECur.slice(0, -1),10) + parseInt(PharmaCur.slice(0, -1),10) + parseInt(OilCur.slice(0, -1),10));
+$("#moneyInStocks").text(moneyStocks);
