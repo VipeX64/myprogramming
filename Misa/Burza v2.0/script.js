@@ -1,6 +1,9 @@
 let money = $("#cash").text();
 let moneyStocks = "";
-
+function fuckouttahere(){
+    $("#instructions").css("display","none");
+    $("#titleScreen").css("display","none");
+}
 $(document).ready(function() {
     console.log("I'm ready!");
     var movementStrength = 25;
