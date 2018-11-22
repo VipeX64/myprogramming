@@ -102,7 +102,7 @@ function prodej(mnozstvi, typ){
                 alert("Pokusil ses prodat více akcií než vlastníš")
             } else {
                 PyroxAm -= mnozstvi;
-                moneyz += (mnozstvi * PyroxVal);
+                moneyz += Math.round(mnozstvi * PyroxVal);
                 $("#PyroxAmount").text(PyroxAm);
                 $("#cash").text(moneyz + "$");
             }
@@ -113,7 +113,7 @@ function prodej(mnozstvi, typ){
                 alert("Pokusil ses prodat více akcií než vlastníš")
             } else {
                 SportAm -= mnozstvi;
-                moneyz += (mnozstvi * SportVal);
+                moneyz += Math.round(mnozstvi * SportVal);
                 $("#SportAmount").text(SportAm);
                 $("#cash").text(moneyz + "$");
             }
@@ -124,7 +124,7 @@ function prodej(mnozstvi, typ){
                 alert("Pokusil ses prodat více akcií než vlastníš")
             } else {
                 WOEAm -= mnozstvi;
-                moneyz += (mnozstvi * WOEVal);
+                moneyz += Math.round(mnozstvi * WOEVal);
                 $("#WOEAmount").text(WOEAm);
                 $("#cash").text(moneyz + "$");
             }
@@ -135,7 +135,7 @@ function prodej(mnozstvi, typ){
                 alert("Pokusil ses prodat více akcií než vlastníš")
             } else {
                 PharmaAm -= mnozstvi;
-                moneyz += (mnozstvi * PharmaVal);
+                moneyz += Math.round(mnozstvi * PharmaVal);
                 $("#PharmaAmount").text(PharmaAm);
                 $("#cash").text(moneyz + "$");
             }
@@ -146,7 +146,7 @@ function prodej(mnozstvi, typ){
                 alert("Pokusil ses prodat více akcií než vlastníš")
             } else {
                 OilAm -= mnozstvi;
-                moneyz += (mnozstvi * OilVal);
+                moneyz += Math.round(mnozstvi * OilVal);
                 $("#OilAmount").text(OilAm);
                 $("#cash").text(moneyz + "$");
             }
