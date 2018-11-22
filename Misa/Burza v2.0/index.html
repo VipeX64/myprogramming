@@ -24,13 +24,13 @@
         <div id="start" onclick="fuckouttahere()">Začít hrát</div>
     </div>
     <div id="game">
-        <table>
+        <table id="tableR" class="table table-striped">
             <tr>
-                <td>Jmeno firmy</td>
-                <td>Popis</td>
-                <td>Cena Akcie</td>
-                <td>Počet vlastněných akcií</td>
-                <td>Peníze v akciích firmy</td>
+                <th>Jmeno firmy</th>
+                <th>Popis</th>
+                <th>Cena Akcie</th>
+                <th style="width: 23vw;">Počet vlastněných akcií</th>
+                <th>Peníze v akciích firmy</th>
             </tr>
             <tr>
                 <td>Pyrox</td>
@@ -85,6 +85,8 @@
 
         </table>
         <div id="buyStocks"><input type="text" id="buyInput"><i class="fas fa-plus"></i></div>
+        <div id="sellStocks"><i class="fas fa-minus"></i><input type="text" id="sellInput"></div>
+        
     </div>
     <div id="news"></div>
     <div id="results"></div>

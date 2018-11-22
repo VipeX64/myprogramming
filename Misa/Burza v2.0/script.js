@@ -1,12 +1,16 @@
 let money = $("#cash").text();
 let moneyStocks = "";
 let opened = false;
+let openedSell = false;
 
 function fuckouttahere() { // funke umožňující náhled do rozvahy majetku
     $("#instructions").css("display", "none");
     $("#titleScreen").css("display", "none");
 }
 $("#buyInput").click(function(e) { // funkce tolerující input v buy/sell menu
+    e.stopPropagation();
+})
+$("#sellInput").click(function(e) { // funkce tolerující input v buy/sell menu
     e.stopPropagation();
 })
 $("#buyStocks").click(function () { // animace animace buy a sell čudlítek
@@ -16,9 +20,7 @@ $("#buyStocks").click(function () { // animace animace buy a sell čudlítek
         }, 1000);
         $("#buyInput").animate({
             width: "4vw"
-        }, 1000, function () {
-
-        });
+        }, 1000);
         opened = true;
     } else {
         $("#buyStocks").animate({
@@ -26,12 +28,31 @@ $("#buyStocks").click(function () { // animace animace buy a sell čudlítek
         }, 1000);
         $("#buyInput").animate({
             width: "0vw"
-        }, 1000, function () {
-
-        });
+        }, 1000);
         opened = false;
     }
 });
+
+$("#sellStocks").click(function (){
+    if(!openedSell) {
+        $("#sellStocks").animate({
+            width: "7vw"
+        }, 1000);
+        $("#sellInput").animate({
+            width: "4vw"
+        }, 1000);
+        openedSell = true;
+    } else {
+        $("#sellStocks").animate({
+            width: "2.5vw"
+        }, 1000);
+        $("#sellInput").animate({
+            width: "0vw"
+        }, 1000);
+        openedSell = false;
+    }
+})
+
 $(document).ready(function () {
     console.log("I'm ready!");
     var movementStrength = 25;
