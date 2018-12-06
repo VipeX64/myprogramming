@@ -7,46 +7,46 @@ function fuckouttahere() { // funke umožňující náhled do rozvahy majetku
     $("#instructions").css("display", "none");
     $("#titleScreen").css("display", "none");
 }
-$("#buyInput").click(function(e) { // funkce tolerující input v buy/sell menu
+$(".buyInput").click(function(e) { // funkce tolerující input v buy/sell menu
     e.stopPropagation();
 })
-$("#sellInput").click(function(e) { // funkce tolerující input v buy/sell menu
+$(".sellInput").click(function(e) { // funkce tolerující input v buy/sell menu
     e.stopPropagation();
 })
-$("#buyStocks").click(function () { // animace animace buy a sell čudlítek
+$(".buyStocks").click(function () { // animace animace buy a sell čudlítek
     if (!opened) {
-        $("#buyStocks").animate({
+        $(this).animate({
             width: "7vw"
         }, 1000);
-        $("#buyInput").animate({
+        $(this).children("input:first").animate({
             width: "4vw"
         }, 1000);
         opened = true;
     } else {
-        $("#buyStocks").animate({
+        $(this).animate({
             width: "2.5vw"
         }, 1000);
-        $("#buyInput").animate({
+        $(this).children("input:first").animate({
             width: "0vw"
         }, 1000);
         opened = false;
     }
 });
 
-$("#sellStocks").click(function (){
+$(".sellStocks").click(function (){
     if(!openedSell) {
-        $("#sellStocks").animate({
+        $(this).animate({
             width: "7vw"
         }, 1000);
-        $("#sellInput").animate({
+        $(this).children("input:first").animate({
             width: "4vw"
         }, 1000);
         openedSell = true;
     } else {
-        $("#sellStocks").animate({
+        $(this).animate({
             width: "2.5vw"
         }, 1000);
-        $("#sellInput").animate({
+        $(this).children("input:first").animate({
             width: "0vw"
         }, 1000);
         openedSell = false;

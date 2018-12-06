@@ -26,10 +26,12 @@
     <div id="game">
         <table id="tableR" class="table table-striped">
             <tr>
-                <th>Jmeno firmy</th>
+                <th>Jméno firmy</th>
                 <th>Popis</th>
                 <th>Cena Akcie</th>
-                <th style="width: 23vw;">Počet vlastněných akcií</th>
+                <th style="width: 15vw;">Vlastněných akcií</th>
+                <th style="width: 10.5vw;">Nákup</th>
+                <th style="width: 10.5vw;">Prodej</th>
                 <th>Peníze v akciích firmy</th>
             </tr>
             <tr>
@@ -37,27 +39,39 @@
                 <td>Vyrábí pyrotechniku, střelný prach</td>
                 <td id ="PyroxValue"></td>
                 <td id="PyroxAmount"></td>
+                <td class="buy"><div class="confirm"><i class="fas fa-check"></i></div><div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div></td>
+                
+                <td class="sell"><div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div></td>
                 <td id="PyroxInCur"></td>
             </tr>
             <tr>
                 <td>Sport tribe </td>
-                <td>Vyrábí sportovní stroje, náčiní ke cvičení a posilování, proteinové prášky</td>
+                <td>Vyrábí sportovní stroje, náčiní ke cvičení a posilování</td>
                 <td id ="SportValue"></td>
                 <td id ="SportAmount"></td>
+                <td class="buy"><div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div></td>
+                
+                <td class="sell"><div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div></td>
                 <td id ="SportInCur"></td>
             </tr>
             <tr>
                 <td>WOE</td>
-                <td>Vyrábí bílou elektroniku a spotřebiče (ledničky, mrazáky,mikrovlnky atd..)</td>
+                <td>Vyrábí bílou elektroniku a spotřebiče <!--(ledničky, mrazáky, mikrovlnky atd..)--></td>
                 <td id="WOEValue"></td>
                 <td id="WOEAmount"></td>
+                <td class="buy"><div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div></td>
+                
+                <td class="sell"><div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div></td>
                 <td id="WOEInCur"></td>
             </tr>
             <tr>
                     <td>Pharma Meds</td>
-                    <td>Výroba léků, zařízení do nemocnic, vakcíny, výzkumy a testování léků</td>
+                    <td>Výroba léků, vakcíny, výzkumy a testování léků</td>
                     <td id="PharmaValue"></td>
                     <td id="PharmaAmount"></td>
+                    <td class="buy"><div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div></td>
+                
+                <td class="sell"><div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div></td>
                     <td id="PharmaInCur"></td>
             </tr>
             <tr>
@@ -65,6 +79,9 @@
                 <td>Těžba ropy,plynu, oboje dodává do Evropy</td>
                 <td id="OilValue"></td>
                 <td id="OilAmount"></td>
+                <td class="buy"><div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div></td>
+                
+                <td class="sell"><div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div></td>
                 <td id="OilInCur"></td>            
             </tr>
         </table>
@@ -84,8 +101,8 @@
             </tr>
 
         </table>
-        <div id="buyStocks"><input type="text" id="buyInput"><i class="fas fa-plus"></i></div>
-        <div id="sellStocks"><i class="fas fa-minus"></i><input type="text" id="sellInput"></div>
+        <!-- <div class="buyStocks"><input type="text" class="buyInput"><i class="fas fa-plus"></i></div>
+        <div class="sellStocks"><i class="fas fa-minus"></i><input type="text" class="sellInput"></div> -->
         
     </div>
     <div id="news"></div>
