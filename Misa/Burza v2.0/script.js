@@ -14,10 +14,10 @@ $(".sellInput").click(function(e) { // funkce tolerující input v buy/sell menu
 $(".buyStocks").click(function () { // animace animace buy a sell čudlítek
     if (!opened) {
         $(this).animate({
-            width: "7vw"
+            width: "7.5vw"
         }, 1000);
         $(this).children("input:first").animate({
-            width: "4vw"
+            width: "5vw"
         }, 1000);
         opened = true;
     } else {
@@ -33,20 +33,22 @@ $(".buyStocks").click(function () { // animace animace buy a sell čudlítek
 
 $(".sellStocks").click(function (){
     if(!openedSell) {
+        $(this).children("input:first").show();
         $(this).animate({
-            width: "7vw"
-        }, 1000);
+            width: "7.5vw"
+        }, 500);
         $(this).children("input:first").animate({
-            width: "4vw"
-        }, 1000);
+            width: "4.5vw"
+        }, 500);
         openedSell = true;
     } else {
         $(this).animate({
             width: "2.5vw"
-        }, 1000);
+        }, 500);
+        $(this).children("input:first").delay(200).hide(0);
         $(this).children("input:first").animate({
             width: "0vw"
-        }, 1000);
+        }, 500);
         openedSell = false;
     }
 })
