@@ -11,7 +11,7 @@ let game = "hello there";
 - Take down your enemies by HAXing into their system.
 - Help your friends from being taken down by any other HAXers.
 - Be the most known pirate among the wide web? or The Defender of all?
-- Fame? Money? Revenge? What is it that you seek? Choose your path..
+- Fame? Money? Revenge? What is it that you seek? Follow your path..
 
 **<h1 style="text-align:center; font-size:40px;">Concepts</h1>**
 | Console command| Argument  | Description     |
@@ -27,3 +27,6 @@ let game = "hello there";
 | SYSDEF | - | Initiates a battle sequence, which helps to defend your PC system |
 | COUNTERSTRIKE | ip address | Insted of defending your PC, this command unleashes thasands of requests to the vulnerable attacker, can't be used if **SYSDEF** is active |
 | KITTY | ip address | Very nice. Launches over 10 tabs with pictures of kittens onto the desktop, hiding everything in it's way. May annoy people |
+| SCAN | - | Scans for any minebots, glitches or any other breaches |
+| PURGE | minebot/glitch/... | Immidietely ends any HAX-tasks, if specified |
+|  |  |  |
