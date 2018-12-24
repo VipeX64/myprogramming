@@ -16,34 +16,26 @@
     <!-- version for 1366x768 -->
 
     <link rel="stylesheet" href="src/style/jquery-ui.css">
-    <style>
-    .draggable {     
-        width: 400px;
-        height: 500px; 
-    }
-    </style>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $(".draggable").draggable({
-          containment: "#workplace"
-      });
-    } );
-    </script>
 
 </head>
 
 <body>
     <div class="container-fluid" id="desktop">
-        <div>Horní lišta</div>
+        <div id="topDesk">Horní lišta</div>
         <div id="workplace">
-            
+
             <div class="draggable" id="terminal" class="ui-widget-content">
-                    <textarea id="TerminalOutput" readonly rows="9" cols="10" value="" style="color:greenyellow"></textarea><br>
-                    <input id="TerminalInput" style="background: #222;width:400px; color: greenyellow"></textarea>
+                <textarea id="TerminalOutput" readonly disabled="disabled" rows="9" cols="10" value=""></textarea><br>
+                <div id="peak">></div><input id="TerminalInput">
             </div>
         </div>
-        <div id="bottomDesk"><i id="userMenu" class="fas fa-user-secret"></i><div id="date" style="float:right;"></div></div>
+        <div id="bottomDesk">
+            <i id="userMenu" class="fas fa-user-secret"></i>
+            <div id="dateTime" style="float:right;"></div>
+            <div id="date" style="float:right;"></div>
+            
+        </div>
     </div>
 
     <script src="src/packages/bootstrap/js/bootstrap.min.js"></script>

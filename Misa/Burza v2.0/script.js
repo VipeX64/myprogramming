@@ -15,18 +15,18 @@ $(".buyStocks").click(function () { // animace animace buy a sell čudlítek
     if (!opened) {
         $(this).animate({
             width: "7.5vw"
-        }, 1000);
+        }, 500);
         $(this).children("input:first").animate({
             width: "5vw"
-        }, 1000);
+        }, 500);
         opened = true;
     } else {
         $(this).animate({
             width: "2.5vw"
-        }, 1000);
+        }, 500);
         $(this).children("input:first").animate({
             width: "0vw"
-        }, 1000);
+        }, 500);
         opened = false;
     }
 });
