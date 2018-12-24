@@ -3,6 +3,7 @@ body{
     font-size: 40px;
     font-family: comfortaa;
     overflow: hidden;
+    /*cursor: url('some-cursor.ico'), default;*/
 }
 #desktop {
     background-color: #463d5d;

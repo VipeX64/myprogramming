@@ -12,6 +12,7 @@ localip = Math.floor((Math.random() * 192) + 1) + "." + Math.floor((Math.random(
 let user = "EdgeLord KerbalDuck";
 let letterFirst = 0;
 let letter = 0;
+let connected = false;
 celkovyTerminalu = "";
 let textarea = document.getElementById("TerminalOutput");
 
@@ -23,17 +24,41 @@ $("input").blur(function () {
     focus = false;
 })
 
-function connectFunc(address) {
+function connectFunc(address) { // function that let's the user connect to another pc
+    let connected = false;
     // alert(address);
-    celkovyTerminalu += ("connecting to " + address + ".." + "\n");
+    celkovyTerminalu += ("connecting to " + address);
+    $("#TerminalOutput").val(celkovyTerminalu);
+    let i = 0;
+    $("#TerminalInput").prop("readonly", true);
+    let dots = setInterval(function () {
+        if (i == 2) {
+            clearInterval(dots); $("#TerminalInput").prop("readonly", false); 
+            setTimeout(() => {
+                celkovyTerminalu += "\n";
+                if(address== localip){ // connect to yourself
+                    celkovyTerminalu+= "sick dude";
+                    $("#TerminalOutput").val(celkovyTerminalu);
+                }
+            }, 200);
+            
+        }
+        celkovyTerminalu += ".";
+        $("#TerminalOutput").val(celkovyTerminalu);
+        i++;
+    }, 500);
+    $("#TerminalOutput").val(celkovyTerminalu);
 }
-function typeWriter() {
-    let welcome = "> Program Hax&Gone initiated.. "+"\n"+"> Login succesfull.." +"\n"+"> Welcome back "+user +"\n"+">"+"\n";
+function typeWriter() { // function that "typewrites" the welcome message
+    $("#TerminalInput").prop("readonly", true);
+    let welcome = "> Program Hax&Gone initiated.. " + "\n" + "> Login succesfull.." + "\n" + "> Welcome back " + user + "\n" + ">" + "\n";
     if (letter < welcome.length) {
         celkovyTerminalu += welcome.charAt(letter);
         $("#TerminalOutput").val(celkovyTerminalu);
         letter++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 75);
+    } else {
+        $("#TerminalInput").prop("readonly", false);
     }
 
 }
@@ -51,12 +76,19 @@ $(document).keyup(function (e) {
         celkovyTerminalu += vstupTerminalu;
         celkovyTerminalu += "\n";
         let arrayInputu = vstupTerminalu.split(" ");
-        if (arrayInputu[0] == "connect") {
+        if (arrayInputu[0] == "connect") { // CONNECT
             connectFunc(arrayInputu[1]);
+            if (connected) {
+
+            }
             $("#TerminalOutput").val(celkovyTerminalu);
-        } else if (arrayInputu[0] == "ipconfig") {
-            celkovyTerminalu += user + "'s ip is: " + localip + "\n";
+        } else if (arrayInputu[0] == "ipconfig") { // IPCONFIG
             $("#TerminalOutput").val(celkovyTerminalu);
+            setTimeout(function () {
+                celkovyTerminalu += user + "'s ip is: " + localip + "\n";
+                $("#TerminalOutput").val(celkovyTerminalu);
+            }, 1500);
+
         } else {
             $("#TerminalOutput").val(celkovyTerminalu);
         }
@@ -82,7 +114,7 @@ function formatDate() {
     minutes < 10 ? minutes = "0" + minutes : minutes = "" + minutes; // makes sure the format ends as eg. 06 and not as 6
     let seconds = date.getSeconds();
     seconds < 10 ? seconds = "0" + seconds : seconds = "" + seconds; // makes sure the format ends as eg. 06 and not as 6
-    $("#date").text(day + '.' + monthIndex+"."); // 
+    $("#date").text(day + '.' + monthIndex + "."); // 
     $("#dateTime").text(hour + ":" + minutes + ":" + seconds); // 
 }
 setInterval(formatDate, 1000);
