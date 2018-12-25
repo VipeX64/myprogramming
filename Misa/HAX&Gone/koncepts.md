@@ -3,12 +3,10 @@
 ```javascript
 let game = "hello there";
 ```
-1. We have peaked the human revolution
-2. Truly
 
 ## 1.0 **Introduction**
 - HAX & Gone is an online multiplayer/coop hacking simulation game. 
-- Take down your enemies by HAXing into their system.
+- Take down others by HAXing into their system.
 - Help your friends from being taken down by any other HAXers.
 - Be the most known pirate among the wide web? or The Defender of all?
 - Fame? Money? Revenge? What is it that you seek? Follow your path..
@@ -18,6 +16,7 @@ let game = "hello there";
 | :------------- | :----------: | -----------|
 |  CONNECT | ip address | Connects to another PC by typing it's IP address.|
 | IPCONFIG   | - | Types your own ip address into the console |
+| BREACH | 1-10 | Attempts to solve remote PC's admin password, can be |
 | HAX   | password | Gains access to the remote PC. Able to operate with the remote system. |
 | CHAT  | ip address /name, "message" | Sends a private message to the user's ip address |
 | GONE  | - | Instantly logs off of a remote PC |
@@ -29,4 +28,4 @@ let game = "hello there";
 | KITTY | ip address | Very nice. Launches over 10 tabs with pictures of kittens onto the desktop, hiding everything in it's way. May annoy people |
 | SCAN | - | Scans for any minebots, glitches or any other breaches |
 | PURGE | minebot/glitch/... | Immidietely ends any HAX-tasks, if specified |
-|  |  |  |
+| BCGR | name of premade background motive | Changes the background of PC that you're currently logged on |

@@ -74,9 +74,8 @@ div#game td{
     padding-right: 5px;
     line-height: 5vh;
     color: black; */
-    width: 2.5vw;
+    /* width: 2.5vw;
     display: inline-block;
-    background: #36b373;
     border-radius: 0 75px 75px 0;
     margin: 1vw;
     font-size: 2vw;
@@ -85,7 +84,17 @@ div#game td{
     padding-right: 5px;
     line-height: 5vh;
     color: black;
-    float: right;
+    float: right; */
+    background: #36b373;
+    width: 2.5vw;
+    border-radius: 75px 0 0 75px;
+    margin: 1vw;
+    font-size: 2vw;
+    height: 5vh;
+    text-align: left;
+    padding-left: 5px;
+    line-height: 5vh;
+    color: black;
 }
 .buyStocks:hover{
     box-shadow: 3px 0px 10px #969696;
@@ -95,13 +104,21 @@ div#game td{
 .buyInput{
     /* position: absolute;
     left: 1vw; */
+    /* width: 0vw;  //5 
+    font-size: 2vw;
+    height: 5vh;
+    text-align: left;
+    background: #0000001c;
+    border: 1px;
+    float: left; */
     width: 0vw; /* 5 */
     font-size: 2vw;
     height: 5vh;
     text-align: left;
     background: #0000001c;
     border: 1px;
-    float: left;
+    float: right;
+    display: none;
 }
 .buyInput:focus{
     box-shadow: 0 0 20px 2px rgb(87, 219, 26);

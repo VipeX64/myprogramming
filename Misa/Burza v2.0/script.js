@@ -13,6 +13,7 @@ $(".sellInput").click(function(e) { // funkce tolerující input v buy/sell menu
 })
 $(".buyStocks").click(function () { // animace animace buy a sell čudlítek
     if (!opened) {
+        $(this).children("input:first").show();
         $(this).animate({
             width: "7.5vw"
         }, 500);
@@ -24,6 +25,7 @@ $(".buyStocks").click(function () { // animace animace buy a sell čudlítek
         $(this).animate({
             width: "2.5vw"
         }, 500);
+        $(this).children("input:first").delay(200).hide(0);
         $(this).children("input:first").animate({
             width: "0vw"
         }, 500);
@@ -52,6 +54,12 @@ $(".sellStocks").click(function (){
         openedSell = false;
     }
 })
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        let focused = document.activeElement.parentElement.parentElement.id; // tells the id of focused element
+        console.log(focused);
+    }
+});
 
 $(document).ready(function () {
     console.log("I'm ready!");
