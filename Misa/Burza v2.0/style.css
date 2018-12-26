@@ -22,6 +22,12 @@ div#game td{
     width: 100vw;
     border-bottom: #e6e2e2 1px solid;
 }
+#tableR tr td, #tableR tr th{
+    vertical-align: middle;
+}
+#tableR tr td:first-child{
+    font-weight: 700;
+}
 #burzaIntro{
     background: rgba(23, 56, 84, 0.9);
     font-size: 70px;
@@ -119,6 +125,7 @@ div#game td{
     border: 1px;
     float: right;
     display: none;
+    padding-left: 4px;
 }
 .buyInput:focus{
     box-shadow: 0 0 20px 2px rgb(87, 219, 26);
@@ -155,6 +162,7 @@ div#game td{
     border: 1px;
     float: right;
     display: none;
+    padding-left: 4px;
 }
 .sellInput:focus{
     box-shadow: 0 0 20px 2px rgb(194, 63, 39);
