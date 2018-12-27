@@ -20,7 +20,7 @@ $(document).ready(function () {
 });
 let nameDatabase = ["JohnyJohny","YesPapa","Michal","Vipe","Leming","SS-ObergruppenFührer-Toušková","Chick-fill-a","Edgelord","Cricket","woooo","ggE retsaE"]
 let localip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
-let user = "EdgeLord KerbalDuck";
+let user = nameDatabase[Math.floor(Math.random()*nameDatabase.length)]
 let letterFirst = 0;
 let letter = 0;
 let connected = false;
