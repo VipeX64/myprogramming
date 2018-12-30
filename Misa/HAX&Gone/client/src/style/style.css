@@ -12,10 +12,17 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
 }
+#database{
+    width: 400px;
+    height: 200px;
+    background-color: #353535fc;
+    border: 2px solid gray;
+    color: white;
+}
 #workplace{
     background-image: url(../img/HAXNGONE.png);
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 50% 50%;
@@ -46,7 +53,7 @@ body{
     left: 0;
     border-top: 1px solid;
     width: 100%;
-    height: 6vh;
+    height: 5vh;
     padding-top: 10px;
     padding-left: 10px;
 }
@@ -66,10 +73,17 @@ body{
 #topDesk{
     border: 1px solid #d4d4d4;
     width: 101vw;
+    height: 5vh;
     margin-left: -2vw;
     padding-left: 1vw;
 }
-
+#topDesk svg{
+    font-size: 4vh;
+    margin: 6px;
+    display: inline-block;
+    margin-right: 25px;
+    float: right;
+}
 #peak{
     float: left;
     position: absolute;
@@ -84,7 +98,7 @@ body{
 }
 #dateTime{
     float: right;
-    width: 165px;
+    width: 15vh;  
     line-height: 40px;
     font-size: 2vw;
     text-align: center;

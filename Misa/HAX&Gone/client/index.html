@@ -22,9 +22,10 @@
 
 <body>
     <div class="container-fluid" id="desktop">
-        <div id="topDesk">Horní lišta</div>
-        <div id="workplace">   
-            <button onclick="testResponce()">HEEY</button>
+        <div id="topDesk" style="padding-left: 30px"><i class="fas fa-battery-full" style="color: #43c343;"></i><i class="fas fa-wifi" style="color: #43c343;"></i><i class="fas fa-mask"></i><i class="fas fa-low-vision"></i></div>
+        <div id="workplace">
+
+            <div class="draggable ui-widget-content" id="database" style="position: relative; left: 722px; top: 191px;"><table id="DB"><tr></tr></table><button onclick="update()" class="btn" style="position: absolute;bottom: -40px;    background-color: gray;">UPDATE</button></div>
 
             <div class="draggable" id="terminal" class="ui-widget-content">
                 <textarea id="TerminalOutput" readonly disabled="disabled" rows="9" cols="10" value=""></textarea><br>

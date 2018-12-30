@@ -1,11 +1,25 @@
+let localip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
+let nameDatabase = ["JohnyJohny","YesPapa","Michal","Vipe","Leming","SS-ObergruppenFührer-Toušková","Fillet","Edgelord","Cricket","woooo","ecs dee"];
+let user = nameDatabase[Math.floor(Math.random()*nameDatabase.length)];
+
 // server
 const socket = io();
 
-let testResponce = function () {
-    socket.emit("test", {
-        responce: localip
-    })
-}
+
+// socket.emit("updateDat",{
+//     ip:localip,
+//     name:user
+// });
+// socket.on("updateData",function(data){
+//    // $("#database").html(data.idNow);
+//    console.log(data);
+//    for(let i = 0;i<data.length;i++){
+//     console.log("what");
+//       $("#database table tr:last").after(`<tr><td>${data[i].nameNow}: </td><td>${data[i].idNow}</td></tr>`);
+//    }
+    
+// })
+
 // server
 
 $(function () {
@@ -18,13 +32,11 @@ $(document).ready(function () {
     typeWriter();
 
 });
-let nameDatabase = ["JohnyJohny","YesPapa","Michal","Vipe","Leming","SS-ObergruppenFührer-Toušková","Chick-fill-a","Edgelord","Cricket","woooo","ggE retsaE"]
-let localip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
-let user = nameDatabase[Math.floor(Math.random()*nameDatabase.length)]
+
 let letterFirst = 0;
 let letter = 0;
 let connected = false;
-celkovyTerminalu = "";
+let celkovyTerminalu = "";
 let textarea = document.getElementById("TerminalOutput");
 
 let focus = false;
@@ -34,6 +46,17 @@ $("input").focus(function () {
 $("input").blur(function () {
     focus = false;
 })
+
+let update = function() {
+    socket.emit("upDatabase", {
+        ip: localip,
+        name: user
+    });
+
+    socket.on("DBres", function(data){
+        $("#DB").html(data.res);
+    })
+}
 
 function connectFunc(address) { // function that let's the user connect to another pc
     let connected = false;
@@ -87,11 +110,14 @@ $(document).keyup(function (e) {
         celkovyTerminalu += vstupTerminalu;
         celkovyTerminalu += "\n";
         let arrayInputu = vstupTerminalu.split(" ");
+        
         if (arrayInputu[0] == "connect") { // CONNECT
             connectFunc(arrayInputu[1]);
-            if (connected) {
-
+            if (connected) { // TBA
             }
+
+            
+
             $("#TerminalOutput").val(celkovyTerminalu);
         } else if (arrayInputu[0] == "ipconfig") { // IPCONFIG
             $("#TerminalOutput").val(celkovyTerminalu);
