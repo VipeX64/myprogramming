@@ -16,13 +16,29 @@ body{
     width: 400px;
     height: 200px;
     background-color: #353535fc;
-    border: 2px solid gray;
     color: white;
+    background-image: url(../img/hexaboard.png);
+    pointer-events: none;
+}
+#databaseDiv{
+    width: 400px;
+    height: 285px;
+}
+#DB{
+    cursor: auto;
+    background: #333333f2;
+    background-image: url(../img/hexaboard.png);
+    background-position: 15% 10%;
+    width: 400px;
+    pointer-events: none;
+    color: #cccad2;
+    resize: none;
+    overflow: hidden;
 }
 #workplace{
-    background-image: url(../img/HAXNGONE.png);
+    background-image: url(../img/HAXNGONE.png); /*../img/glitch1.jpg; */
     width: 100%;
-    height: 90vh;
+    height: 88vh;
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 50% 50%;
@@ -30,45 +46,49 @@ body{
 }
 #TerminalOutput{
     cursor:auto;
-    background: #333;
+    background: #333333f2;
     width:600px;
     pointer-events: none;
     color:greenyellow;
     resize: none;
     overflow: hidden;
+    background-image: url(../img/hexaboard.png);
+    font-family: monospace;
 }
 #TerminalInput{
     background: #222;
     width:600px;
     color: greenyellow;
     padding-left: 15px;
+    font-family: monospace;
 }
 #terminal{
     position: absolute;
     z-index: 9;
+    width: 600px;
 }
 #bottomDesk{
     position: absolute;
     bottom: 0;
     left: 0;
-    border-top: 1px solid;
+    border-top: 2px solid #987ba5;
     width: 100%;
-    height: 5vh;
-    padding-top: 10px;
-    padding-left: 10px;
+    height: 7vh;
 }
 #bottomDesk svg{
-    font-size: 5vh;
+    font-size: 6vh;
     color: rgb(185, 185, 185);
-    -webkit-transition: color 0.15s;
-    transition: color 0.15s;
+    -webkit-transition: color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out;
 }
 #bottomDesk svg:hover{
-    color: rgb(99, 181, 81);
+    color: #0000008c;
     cursor: pointer;
 }
-#TerminalInput::before{
-    content: ">";
+#userMenu {
+    position: absolute;
+    bottom: 0;
+    margin: 0 0.7vh;
 }
 #topDesk{
     border: 1px solid #d4d4d4;
@@ -94,18 +114,80 @@ body{
 #date{
     float: right;
     line-height: 40px;
-    font-size: 2vw;
+    font-size: 3vh;
+}
+#dates{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    user-select: none;
 }
 #dateTime{
     float: right;
     width: 15vh;  
     line-height: 40px;
-    font-size: 2vw;
+    font-size: 3vh;
     text-align: center;
+}
+#optionMenu{
+    width: 7vh;
+    height: 7vh;
+    border-right: 2px solid #9e929e;
+    border-radius: 10px;
+    background: #321350;
+}
+#optionMenu svg:hover{
+    color: rgb(133, 38, 177);
 }
 .draggable{
     width: fit-content;
     height: fit-content;
     user-select: none;
     font-size: 16px;
+}
+.icons{
+    float: left;
+    margin-left: 10vh;
+    bottom: 0px;
+    position: absolute;
+    height: 7vh;
+}
+.icons div{
+    float: left;
+    border-right: 1px solid #c1c1c1;
+    border-left: 1px solid #c1c1c1;
+    border-radius: 10px;
+    width: 9vh;
+    height: 7vh;
+    text-align: center;
+    margin-top: 0.5vh;
+    margin-right: 0.2vh;
+    background-image: linear-gradient(to top, #661184, #b75cb7);
+    cursor: pointer;
+}
+.icons div:hover{
+    background-image: linear-gradient(to top, #25082f, #8e5e8e);
+    transition: 0.1s ease-in-out;
+}
+.icons svg{
+    margin: 0 0.75vw;
+}
+.topbar{
+    border: 1px gray solid;
+    text-align: right;
+    padding: 2px 20px 0 0;
+    background: #222222c4;
+    font-size: 3vh;
+    border-radius: 50px 50px 0 0;
+}
+.topbar svg:hover{
+    transition: 0.15s ease-in-out;
+    color: rgb(141, 24, 24);
+    cursor: pointer;
+}
+.topbar span{
+    float: left;
+    padding-left: 40px;
+    font-size: 2vh;
+    margin-top: 13px;
 }

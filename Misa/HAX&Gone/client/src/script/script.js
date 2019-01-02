@@ -1,6 +1,8 @@
 let localip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
-let nameDatabase = ["JohnyJohny","YesPapa","Michal","Vipe","Leming","SS-ObergruppenFührer-Toušková","Fillet","Edgelord","Cricket","woooo","ecs dee"];
+let nameDatabase = ["JohnyJohny","YesPapa","Michal","Vipe","Leming","SS-ObergruppenFuhrer-Touskova","Fillet","Edgelord","Cricket","woooo","ecs dee"];
 let user = nameDatabase[Math.floor(Math.random()*nameDatabase.length)];
+
+
 
 // server
 const socket = io();
@@ -19,7 +21,10 @@ const socket = io();
 //    }
     
 // })
-
+socket.emit("upDatabase", {
+    ip: localip,
+    name: user
+});
 // server
 
 $(function () {
@@ -38,6 +43,7 @@ let letter = 0;
 let connected = false;
 let celkovyTerminalu = "";
 let textarea = document.getElementById("TerminalOutput");
+let zindex = 50;
 
 let focus = false;
 $("input").focus(function () {
@@ -47,16 +53,25 @@ $("input").blur(function () {
     focus = false;
 })
 
-let update = function() {
-    socket.emit("upDatabase", {
-        ip: localip,
-        name: user
+let update = function() { //temporary database that shows all ip addresses online/offline that have connected since server startup
+    socket.emit("DBreq",{
     });
-
     socket.on("DBres", function(data){
         $("#DB").html(data.res);
     })
 }
+$(".draggable").mousedown(function(event){ // click on new element will take the selected element in the first view place
+    $(event.target).css("z-index", zindex);
+    zindex++;
+})
+$(".icons div").hover(
+    function(){
+    $(this).children().children().css("color","rgba(0, 0, 0, 0.55)");
+    $(this).children().children().css("cursor","pointer");
+}, function(){
+    $(this).children().children().css("color","rgb(185, 185, 185)");
+    $(this).children().children().css("cursor","auto");
+});
 
 function connectFunc(address) { // function that let's the user connect to another pc
     let connected = false;
@@ -71,7 +86,7 @@ function connectFunc(address) { // function that let's the user connect to anoth
             setTimeout(() => {
                 celkovyTerminalu += "\n";
                 if (address == localip) { // connect to yourself
-                    celkovyTerminalu += "sick dude";
+                    celkovyTerminalu += "Connected to "+user + "\n";
                     $("#TerminalOutput").val(celkovyTerminalu);
                 }
             }, 200);
@@ -127,6 +142,7 @@ $(document).keyup(function (e) {
             }, 1500);
 
         } else {
+            celkovyTerminalu+= "error, invalid command"+"\n";
             $("#TerminalOutput").val(celkovyTerminalu);
         }
         textarea.scrollTop = textarea.scrollHeight;
@@ -151,7 +167,7 @@ function formatDate() {
     minutes < 10 ? minutes = "0" + minutes : minutes = "" + minutes; // makes sure the format ends as eg. 06 and not as 6
     let seconds = date.getSeconds();
     seconds < 10 ? seconds = "0" + seconds : seconds = "" + seconds; // makes sure the format ends as eg. 06 and not as 6
-    $("#date").text(day + '.' + monthIndex + "."); // 
+    $("#date").text(day + '. ' + monthIndex + "."); // 
     $("#dateTime").text(hour + ":" + minutes + ":" + seconds); // 
 }
 setInterval(formatDate, 1000);
