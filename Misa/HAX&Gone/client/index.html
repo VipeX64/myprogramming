@@ -19,9 +19,9 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
-
+<!-- LOADING PAGE TO BE ADDED -->
 <body>
-    <div class="container-fluid" id="desktop">
+    <div id="desktop">
         <div id="topDesk" style="padding-left: 30px">
             <i class="fas fa-battery-full" style="color: #43c343;"></i>
             <i class="fas fa-wifi" style="color: #43c343;"></i>
@@ -56,22 +56,48 @@
 
 
         </div>
+        <div id="desktopMenu">
+            <div class="optionMenu">Challenges</div>
+            <div class="optionMenu">Leaderboards</div>
+            <div class="optionMenu">Options</div>
+            <div class="optionMenu">Power OFF</div>
+        </div>
         <div id="bottomDesk">
             <div id="optionMenu">
                 <i id="userMenu" class="fas fa-user-secret"></i>
             </div>
             <div class="icon-bar icons">
-                <div> <a ><i class="fa fa-home"></i></a>  </div>
-                <div> <a ><i class="fa fa-search"></i></a>  </div>
-                <div> <a ><i class="fa fa-envelope"></i></a>  </div>
-                <div> <a ><i class="fa fa-globe"></i></a> </div>
-                <div> <a ><i class="fa fa-trash"></i></a>  </div>
+                <div title="Terminal" data-ng-value="active" data-ng-list="terminal" id="icTerminal">
+                    <a>
+                        <i class="fas fa-terminal"></i>
+                    </a>
+                </div>
+                <div title="World Database" data-ng-value="active" data-ng-list="databaseDiv" id="icDBase">
+                    <a>
+                        <i class="fa fa-globe"></i>
+                    </a>
+                </div>
+                <div title="ChatBox" data-ng-value="nonactive" id="icChat">
+                    <a>
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </div>
+                <div title="GreenWall" data-ng-value="nonactive" id="icGreen">
+                    <a>
+                        <i class="fab fa-envira"></i>
+                    </a>
+                </div>
+                <div title="TBA" data-ng-value="nonactive">
+                    <a>
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
             </div>
             <div id="dates">
                 <div id="dateTime" style="float:right;">0:00:00</div>
                 <div id="date" style="float:right;">01. 01.</div>
-        </div>
-            
+            </div>
+
 
         </div>
     </div>

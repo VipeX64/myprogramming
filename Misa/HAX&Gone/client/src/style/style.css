@@ -15,7 +15,7 @@ body{
 #database{
     width: 400px;
     height: 200px;
-    background-color: #353535fc;
+    background-color: #353535f2;
     color: white;
     background-image: url(../img/hexaboard.png);
     pointer-events: none;
@@ -23,10 +23,11 @@ body{
 #databaseDiv{
     width: 400px;
     height: 285px;
+    opacity: 1;
 }
 #DB{
     cursor: auto;
-    background: #333333f2;
+    background: #3131319e;
     background-image: url(../img/hexaboard.png);
     background-position: 15% 10%;
     width: 400px;
@@ -66,6 +67,7 @@ body{
     position: absolute;
     z-index: 9;
     width: 600px;
+    opacity: 1;
 }
 #bottomDesk{
     position: absolute;
@@ -89,13 +91,12 @@ body{
     position: absolute;
     bottom: 0;
     margin: 0 0.7vh;
+    pointer-events: none;
 }
 #topDesk{
-    border: 1px solid #d4d4d4;
-    width: 101vw;
+    border-bottom: 1px solid #a7a7a7;
+    width: 100vw;
     height: 5vh;
-    margin-left: -2vw;
-    padding-left: 1vw;
 }
 #topDesk svg{
     font-size: 4vh;
@@ -135,9 +136,25 @@ body{
     border-right: 2px solid #9e929e;
     border-radius: 10px;
     background: #321350;
+    cursor: pointer;
 }
 #optionMenu svg:hover{
-    color: rgb(133, 38, 177);
+    color: rgb(128, 52, 163);
+}
+.optionMenu{
+    padding-left: 10px;
+}
+#desktopMenu{
+    background: #5d6875;
+    position: fixed;
+    bottom: 7vh;
+    width: 350px;
+    height: 400px;
+    z-index: 99999;
+    border: 10px solid #7f8390;
+    border-radius: 20px 20px 0 0;
+    display: none;
+    user-select: none;
 }
 .draggable{
     width: fit-content;
@@ -157,20 +174,23 @@ body{
     border-right: 1px solid #c1c1c1;
     border-left: 1px solid #c1c1c1;
     border-radius: 10px;
-    width: 9vh;
     height: 7vh;
     text-align: center;
     margin-top: 0.5vh;
-    margin-right: 0.2vh;
-    background-image: linear-gradient(to top, #661184, #b75cb7);
+    margin-right: 0.3vh;
+    /* background-image: linear-gradient(to top, #661184, #b75cb7); */
+    background: transparent;
     cursor: pointer;
+    transition: 0.1s ease-in-out;
 }
 .icons div:hover{
-    background-image: linear-gradient(to top, #25082f, #8e5e8e);
+    /* background-image: linear-gradient(to top, #25082f, #8e5e8e); */
+    background-image: linear-gradient(to top, #661184, #b75cb7);
     transition: 0.1s ease-in-out;
 }
 .icons svg{
     margin: 0 0.75vw;
+    font-size: 5vh !important;
 }
 .topbar{
     border: 1px gray solid;
