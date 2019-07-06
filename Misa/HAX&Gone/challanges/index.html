@@ -32,80 +32,7 @@
         </div>
         <div id="workplace">
 
-            <div class="draggable particles-js" id="terminal" style="position: relative; left: 20px; top: 205px;">
-                <div class="topbar" style="width: 600px; pointer-events:none;">
-                    <span>hax_console_v1</span>
-                    <i class="fas fa-times-circle" id="closeCons" style="pointer-events:all;"></i>
-                </div>
-                <textarea id="TerminalOutput" readonly disabled="disabled" rows="9" cols="10" value=""></textarea>
-                <br>
-                <div id="peak">></div>
-                <input id="TerminalInput" spellcheck="false">
-            </div>
-
-            <div class="draggable" id="databaseDiv" style="position: relative; left: 648px; top: -72px;">
-                <div class="topbar" style="pointer-events:none;">
-                    <span>ip_database_v1</span>
-                    <i class="fas fa-times-circle" id="closeDats" style="pointer-events:all;"></i>
-                </div>
-                <div id="database" rows="9">
-                    <textarea id="DB" rows="9" readonly disabled="disabled"></textarea>
-                    <button onclick="update()" class="btn" style="bottom: -40px;background-color: gray;pointer-events: all;">UPDATE</button>
-                </div>
-            </div>
-
-            <div class="draggable" id="chatBox" style="position: relative; left: 20px;">
-                <div class="topbar" style="pointer-events:none;">
-                    <span>chatBox_v1</span>
-                    <i class="fas fa-times-circle" id="closeChats" style="pointer-events:all;"></i>
-                </div>
-                <div id="chat" rows="9">
-                    <div class="fours">
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="fours">
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
 
 
@@ -132,7 +59,7 @@
                         <i class="fa fa-globe"></i>
                     </a>
                 </div>
-                <div title="ChatBox" data-ng-value="active" data-ng-list="chatBox" id="icChat">
+                <div title="ChatBox" data-ng-value="nonactive" id="icChat">
                     <a>
                         <i class="fa fa-envelope"></i>
                     </a>
@@ -155,7 +82,6 @@
                 <div title="TBA" data-ng-value="nonactive">
                     <a>
                         <i class="fab fa-expeditedssl"></i>
-                        <i class="fas fa-bug"></i>
                     </a>
                 </div>
             </div>

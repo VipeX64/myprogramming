@@ -1,6 +1,6 @@
-let localip;
-//let nameDatabase = ["JohnyJohny", "YesPapa", "Michal", "Vipe", "Leming", "SS-ObergruppenFuhrer-Touskova", "Fillet", "Edgelord", "Cricket", "woooo", "ecs dee"];
-let user;
+let localip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
+let nameDatabase = ["JohnyJohny", "YesPapa", "Michal", "Vipe", "Leming", "SS-ObergruppenFuhrer-Touskova", "Fillet", "Edgelord", "Cricket", "woooo", "ecs dee"];
+let user = nameDatabase[Math.floor(Math.random() * nameDatabase.length)];
 const vipefact = [""]; // command vipe
 
 
@@ -21,10 +21,10 @@ const socket = io();
 //    }
 
 // })
-// socket.emit("upDatabase", {
-//     ip: localip,
-//     name: user
-// });
+socket.emit("upDatabase", {
+    ip: localip,
+    name: user
+});
 // server
 
 $(function () {
@@ -32,14 +32,11 @@ $(function () {
         containment: "#workplace"
     });
 });
-socket.on("letsplay", function (data) {
-    localip = data.ip;
-    user = data.user;
-    typeWriter();
-    startem();
-})
 $(document).ready(function () {
     console.log("ready!");
+    typeWriter();
+    startem();
+
 });
 let ndClick = false;
 let letterFirst = 0;
@@ -103,17 +100,17 @@ $("#optionMenu").hover(
 )
 
 // closing windows
-$("#closeCons").click(function () {
+$("#closeCons").click(function(){
     $("#terminal").fadeTo(200, 0);
-    $("#terminal").css("pointer-events", "none");
-    $("#icTerminal").attr("data-ng-value", "nonactive");
-    $("#icTerminal").css("background", "transparent");
+    $("#terminal").css("pointer-events","none");
+    $("#icTerminal").attr("data-ng-value","nonactive");
+    $("#icTerminal").css("background","transparent");
 });
-$("#closeDats").click(function () {
+$("#closeDats").click(function(){
     $("#databaseDiv").fadeTo(200, 0);
-    $("#databaseDiv").css("pointer-events", "none");
-    $("#icDBase").attr("data-ng-value", "nonactive");
-    $("#icDBase").css("background", "transparent");
+    $("#databaseDiv").css("pointer-events","none");
+    $("#icDBase").attr("data-ng-value","nonactive");
+    $("#icDBase").css("background","transparent");
 });
 //closing windows
 
@@ -224,9 +221,6 @@ $(document).keyup(function (e) {
         $("#TerminalInput").val("");
     }
 });
-
-setInterval(update, 2000);
-
 function formatDate() {
     let date = new Date();
 

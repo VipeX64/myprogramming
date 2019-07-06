@@ -33,18 +33,6 @@ body {
     height: 285px;
     opacity: 1;
 }
-#chatBox{
-    width: 400px;
-    height: 250px;
-    color: white;
-}
-#chat{
-    background-color: #353535f2;
-    border: 1px solid #8a8a8a;
-    color: white;
-    width: 400px;
-    height: 200px;
-}
 
 #DB {
     cursor: auto;
@@ -258,22 +246,4 @@ body {
     padding-left: 40px;
     font-size: 2vh;
     margin-top: 13px;
-}
-
-.fours div{
-    float: left;
-    width: 89px;
-    height: 80px;
-    margin: 10px 5px;
-    border: #545454 1px solid;
-}
-.fours a {
-    padding: 12px;
-    font-size: 62px;
-    color:  #5d6875;
-}
-.fours a:hover {
-    color: #545454;
-    
-    cursor: url(../../../../server/src/img/cursor/cursorpointer4.png), pointer;
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="refresh" content="0.1;url=http://google.cz/"> -->
+    <title>HAX&Gone</title>
+    <script src="..\server\src\script\jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script defer src="../server/src/packages/fontawesome/js/fontawesome.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../server/src/packages/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../server/src/packages\fontawesome\css\all.css">
+    <link rel="shortcut icon" type="image/ico" href="../server/packages/img/favicon.ico" />
+    <link rel="stylesheet" href="../server/src/style/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <!-- version for 1366x768 -->
+
+    <link rel="stylesheet" href="src/style/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<!-- LOADING PAGE TO BE ADDED -->
+
+<body>
+    <div id="desktop">
+
+        <div id="login">
+            <form action="/game" method="post"></form>
+            <div id="welcome">Log in & start HAXing</div>
+            <div class="form-group">
+
+                <label style="font-size:18px;" for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" value="admin">
+            </div>
+            <div class="form-group">
+                <label style="font-size:18px;" for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" value="admin">
+            </div>
+            <button id="submitLogin" type="submit" class="btn btn-default btn-block submit" onclick='socket.emit("uplogin", {
+                user: $(`#username`).val(),pwd: $(`#pwd`).val()});'>Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="../server/src/packages/bootstrap/js/bootstrap.min.js"></script>
+    <script src="src/script/script.js"></script>
+    <script>socket.on("readyToPlay", function(data){
+        if(data.success){
+            window.location.replace("/game");
+        }
+    })</script>
+</body>
+
+</html>

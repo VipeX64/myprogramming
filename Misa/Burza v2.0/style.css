@@ -28,6 +28,9 @@ div#game td{
 #tableR tr td:first-child{
     font-weight: 700;
 }
+#tableR tr td:nth-child(even){
+    background-color: whitesmoke;
+}
 #burzaIntro{
     background: rgba(23, 56, 84, 0.9);
     font-size: 70px;
