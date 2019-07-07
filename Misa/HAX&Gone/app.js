@@ -27,12 +27,12 @@ io.sockets.on("connection", function (socket) {
     //console.log("socket connection: " + socket); [object object]
     socket.user = nameDatabase[Math.floor(Math.random() * nameDatabase.length)];
     socket.ip = Math.floor(Math.random() * 193) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256) + "." + Math.floor(Math.random() * 256); // termporary madeup IP address
-    
+
     socket.emit("letsplay", {
         user: socket.user,
         ip: socket.ip
     });
-    
+
     online.push(socket.user);
     online.push(socket.ip);
     console.log(`${socket.user} connected with an IP of ${socket.ip}`)
@@ -41,7 +41,7 @@ io.sockets.on("connection", function (socket) {
         delete userList[socket.ip];
         online.splice(online.indexOf(socket.user), 1);
         online.splice(online.indexOf(socket.ip), 1);
-        console.log(online);
+        console.log(`There are exactly these players online: ${online}`);
     });
     // socket.on("upDatabase", function (data) {
     //     //preDatabase += data.name + ": " + data.ip + "\n";
@@ -56,15 +56,25 @@ io.sockets.on("connection", function (socket) {
             });
         }
     });
+    socket.on("chatSend", function (data) {
+        console.log(`Look! Sending ${data.message} to ${data.ip} from ${data.from}`);
+        //socket.broadcast.emit("message", "for your eyes");
+        socket.broadcast.emit(`message`, {
+            ip:data.ip,
+            from: data.from,
+            message: data.message
+        });
+    });
+
+
     socket.on("DBreq", function (data) {
-        console.log(Object.keys(io.engine.clients));
-        console.log(online);
+        //console.log(Object.keys(io.engine.clients));
+        //console.log(online);
         preDatabase = "";
-        for(let i = 0;i<online.length;i +=2){
-            preDatabase += `${online[i]} with IP: ${online[i+1]} \n`; 
-            
+        for (let i = 0; i < online.length; i += 2) {
+            preDatabase += `${online[i]} with IP: ${online[i + 1]} \n`;
+
         }
-        
         socket.emit("DBres", {
             res: preDatabase
         })

@@ -1,31 +1,38 @@
 # Introduction to Hax&Gone mechanics
 
 ## **GAME TERMINOLOGY**
+
 ## Tracability icon (half-covered eye) <img src="server/src/img/TraceEye.png" alt="TraceEye" width="50" style="float:left;padding-right:15px"/>
 
 Users who haven't done anything notorious or heroic are untracable, since there is no recent activity to trace. As soon as you start surfing on the NeT you're visible to the whole NeT. So be careful! Plan your actions thoroughly.
 
 ## Connected icon
+
 Indicates if the system is currently connected to the HaXNeT.
 
-## System energy 
-Starts at 100 points, decreases by 1% point every minute. Recharges by 2% every minute when offline. Possible to surge, drain or quickly restore. 
+## System energy
+
+Starts at 100 points, decreases by 1% point every minute. Recharges by 2% every minute when offline. Possible to surge, drain or quickly restore.
 
 ## BOTPC
+
 Randomly deployed complex drones, that operate as a beacon. They are programmed to send out a Electromagnetic pulse in it's radius every 24 hours. This pulse automatically recognizes the "pest" of the HaXNet and distorts their system, leaking some of their money and shutting off their power supplies for hours. Unfortunately, the HaXers found a way to turn this feature against The Blues.
 
 Users of the same faction tend to band together to capture the BOTPC for their own faction and to weaken the opposite one.
 
 ## The Blues
-The protectors of the HaXNeT. Ethical hackers, simply refered as "The Blues", whoose main goal is to defend the user community from infamous hackers and restoring, keeping the BOTPCs safe from any attacks. 
+
+The protectors of the HaXNeT. Ethical hackers, simply refered as "The Blues", whoose main goal is to defend the user community from infamous hackers and restoring, keeping the BOTPCs safe from any attacks.
 
 The Blues gain fame for every action that makes the user community feel safer surfing on the NeT. You can either put down the HaXers which you've been able to trace or you can imprison them for their crimes.
 
 ## CyberJail
+
 Place specifically designed to keep the scum at bay. HaXers tend to stick together and help each other. Unbeliavable, right? They never leave anyone from their faction in the lurch. Therefore breaches happen quite often. Is there anything to stop this from happening? We need to buff up the security here!
 
 ## The HaXers
-The best of the best, vicious criminals with the only goal- to make it BIG. To be the most notorious rascal amongst all others. Be on the top of the leaderboards. Arrange organized attacks on scattered BOTPCs, rob the n00bs, erase the opposition from existance. 
+
+The best of the best, vicious criminals with the only goal- to make it BIG. To be the most notorious rascal amongst all others. Be on the top of the leaderboards. Arrange organized attacks on scattered BOTPCs, rob the n00bs, erase the opposition from existance.
 
 If you choose this path, noone's gonna hold your hand. It's up to you to show the world who's the boss. HaXers gain infamy for every notorious action they perform. The higher the infamy, the more likely you are to be found, targeted and put down by The Blues. So be careful!
 
@@ -76,4 +83,3 @@ TEATIME            |              ip address, money              | Attempts to b
 |[1]| Don't influence the infamy nor the fame|
 |[2] | Increases infamy with the exception of defending someone, in such case increases fame|
 |[3]| You gain some of the drained energy|
-

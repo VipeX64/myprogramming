@@ -37,7 +37,30 @@ socket.on("letsplay", function (data) {
     user = data.user;
     typeWriter();
     startem();
-})
+});
+
+// socket.on(localip, function (data) {
+//     console.log("at least");
+//     celkovyTerminalu += `${data.from} says ${data.msg}`;
+//     $("#TerminalOutput").val(celkovyTerminalu);
+//     textarea.scrollTop = textarea.scrollHeight;
+// });
+
+socket.on("message", function (data) {
+    if (data.ip == localip) {
+
+        celkovyTerminalu += `${data.from} says ${data.msg} \n`;
+        $("#TerminalOutput").val(celkovyTerminalu);
+        textarea.scrollTop = textarea.scrollHeight;
+    } else {
+        console.log("at least");
+    }
+    
+
+});
+
+
+
 $(document).ready(function () {
     console.log("ready!");
 });
@@ -48,6 +71,9 @@ let connected = false;
 let celkovyTerminalu = "";
 let textarea = document.getElementById("TerminalOutput");
 let zindex = 50;
+let msg;
+let chatIp;
+let BottomI = 0; // sets degrees for bottomBar rotation
 
 let focus = false;
 $("input").focus(function () {
@@ -69,12 +95,22 @@ $(".draggable").mousedown(function (event) { // click on new element will take t
     zindex++;
 })
 
+
+
+function bottomBar(){ //automatic rotation of background
+if(BottomI ==360){
+    BottomI = 0;
+}
+$("#bottomDesk").css("background",`repeating-linear-gradient(${BottomI}deg, #32134a, #823cc1 100px)`);
+BottomI++;
+}
+
 $(".icons div").click(function (event) { //icons being visually toggled - ON and OFF
     if ($(this).attr("data-ng-value") == "nonactive") { //not on --> open tab
         $(this).attr("data-ng-value", "active");
         $(`#${$(this).attr("data-ng-list")}`).fadeTo(200, 1);
         $(`#${$(this).attr("data-ng-list")}`).css("pointer-events", "auto");
-        $(this).css("background-image", "linear-gradient(to top, #661184, #b75cb7)");
+        $(this).css("background-image", "linear-gradient(to top, rgba(102, 17, 132, 0.6), rgba(183, 92, 183, 0.6))");
     } else { // on --> close tab
         $(this).attr("data-ng-value", "nonactive");
         $(`#${$(this).attr("data-ng-list")}`).fadeTo(200, 0);
@@ -183,8 +219,8 @@ function typeWriter() { // function that "typewrites" the welcome message
 
 }
 function startem() { // which elements are to be visible upon startup
-    $("#icTerminal").css("background-image", "linear-gradient(to top, #661184, #b75cb7)");
-    $("#icDBase").css("background-image", "linear-gradient(to top, #661184, #b75cb7)");
+    $("#icTerminal").css("background-image", "linear-gradient(to top, rgba(102, 17, 132, 0.6), rgba(183, 92, 183, 0.6))");
+    $("#icDBase").css("background-image", "linear-gradient(to top, rgba(102, 17, 132, 0.6), rgba(183, 92, 183, 0.6))");
 }
 $(document).keyup(function (e) {
 
@@ -214,7 +250,37 @@ $(document).keyup(function (e) {
             setTimeout(function () {
                 celkovyTerminalu += user + "'s ip is: " + localip + "\n";
                 $("#TerminalOutput").val(celkovyTerminalu);
-            }, 1500);
+            }, 750);
+
+        } else if (arrayInputu[0] == "bcgr") { //BCGR - list all available 
+            $("#TerminalOutput").val(celkovyTerminalu);
+            if (arrayInputu[1] == "hacknet") {
+                $("#workplace").css("background-image", "url(../../../../server/src/img/hcknet.jpg)");
+                $("#workplace").css("background-size", "cover");
+
+            } else {
+                $("#workplace").css("background-image", "url(../../../../server/src/img/HAXNGONE.png)");
+                $("#workplace").css("background-size", "50%");
+            }
+
+
+        } else if (arrayInputu[0].toLowerCase() == "msg" && arrayInputu.length >= 2) {
+            chatIp = arrayInputu[1];
+            msg = "";
+            
+            //celkovyTerminalu += `msg ${arrayInputu[1]}`;
+            for (let i = 2; i < arrayInputu.length; i++) {
+                msg += ` ${arrayInputu[i]}`;
+                //celkovyTerminalu += ` ${arrayInputu[i]}`;
+                $("#TerminalOutput").val(celkovyTerminalu);
+            }
+            console.log(arrayInputu[1]);
+            socket.emit("chatSend", {
+                from: localip,
+                ip: chatIp,
+                message: msg
+            });
+
 
         } else {
             celkovyTerminalu += "error, invalid command" + "\n";
@@ -226,6 +292,8 @@ $(document).keyup(function (e) {
 });
 
 setInterval(update, 2000);
+
+setInterval(bottomBar,50);
 
 function formatDate() {
     let date = new Date();
